@@ -73,8 +73,7 @@ try:
         c = conn.cursor()        
         
         # Create the products table        
-        c.execute('''CREATE TABLE IF NOT EXISTS products        
-                     (name text, description text, sku text, price real)''')        
+        c.execute('''CREATE TABLE IF NOT EXISTS products (name text, description text, sku text, price real)''')
         
         # Scrape the website by product URL        
         url_prefix = 'https://lifesupply.ca'        
