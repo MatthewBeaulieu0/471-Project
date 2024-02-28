@@ -7,7 +7,7 @@ from woocommerce import API
 logging.basicConfig(filename='mecp_scraper.log', level=logging.INFO)
 
 try:
-    # Create the output directory if it doesn't exist            
+    # Create the output directory if it doesn't exist
     if not os.path.exists('mecp_output'):
         os.makedirs('mecp_output')
 
@@ -17,7 +17,7 @@ try:
     consumer_secret = 'cs_aa80d749fab631e6c99748e7a1f80d35d3193851'
     wcapi = API(url=url, consumer_key=consumer_key, consumer_secret=consumer_secret)
 
-    # Create the products table in the database            
+    # Create the products table in the database
     wcapi.post("products", {
         "name": "MECP Products",
         "type": "simple",
@@ -29,25 +29,25 @@ try:
         "stock_quantity": 0
     })
 
-    # Get all products from the API            
+    # Get all products from the API
     products = wcapi.get("products").json()
     print(products)
 
-    # Initialize counters for processed products and errors            
+    # Initialize counters for processed products and errors
     processed_products = 0
     errors = 0
 
-    # Extract product information from all products            
+    # Extract product information from all products
     for product in products:
         try:
             title = product['name']
             description = product['description']
             sku = product['sku']
             price = float(product['regular_price'])
-            # Save the data to the database            
-            # Replace this with your own code to save the data to your database            
+            # Save the data to the database
+            # Replace this with your own code to save the data to your database
             logging.info(f"Scraped product: {title} ({product['permalink']}) at {time.strftime('%Y-%m-%d %H:%M:%S')}.")
-            # Add a delay between requests based on the server response time            
+            # Add a delay between requests based on the server response time
             delay = requests.get(product['permalink']).elapsed.total_seconds() * 0.1
             time.sleep(delay)
             processed_products += 1

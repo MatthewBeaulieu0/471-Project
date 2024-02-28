@@ -100,10 +100,10 @@ def training_data():
 def add_competitor():
     if request.method == 'POST':
         competitor_name = request.form['competitor_name']
-        # Create the mapping table for the new competitor  
+        # Create the mapping table for the new competitor
         mapping_table = pd.DataFrame(columns=['mecp_sku', f'{competitor_name}_sku'])
         mapping_table.to_csv(f'{competitor_name}_sku_mapping.csv', index=False)
-        # Create the matched products table for the new competitor  
+        # Create the matched products table for the new competitor
         mecp_conn = sqlite3.connect('mecp_output/mecp.db')
         c = mecp_conn.cursor()
         c.execute(
@@ -119,9 +119,9 @@ def add_competitor():
 def remove_competitor():
     if request.method == 'POST':
         competitor_name = request.form['competitor_name']
-        # Remove the mapping table for the competitor  
+        # Remove the mapping table for the competitor
         os.remove(f'{competitor_name}_sku_mapping.csv')
-        # Remove the matched products table for the competitor  
+        # Remove the matched products table for the competitor
         mecp_conn = sqlite3.connect('mecp_output/mecp.db')
         c = mecp_conn.cursor()
         c.execute(f"DROP TABLE IF EXISTS {competitor_name}_matched_products")
