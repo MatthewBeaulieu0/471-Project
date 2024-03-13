@@ -1,40 +1,35 @@
 # Project Summary
-# Team 5: Price comparison
-The project's objectives are to create a complete drug price comparison tool, recognise popular drug names, link them to their specific Manufactured Part Numbers (MPNs), and use machine learning algorithms to create connections between drug names and specifications and MPNs—particularly in situations where MPNs are hard to come by. This entails using Crawlab to crawl competitors websites take the picture of items, their description and store these for further comparison.
+# Team 5: E-commerce Customer Service Satisfaction Analysis
+The primary objective of this project is to analyze customer service interactions within an e-commerce setting to predict Customer Satisfaction (CSAT) Scores. By leveraging data from customer service interactions, including feedback, agent handling times, and product categories, we aim to uncover the key factors driving customer satisfaction. This involves using machine learning to identify patterns and correlations between various features and the CSAT Scores. Our goal is to provide actionable insights that can help improve customer service strategies and overall customer satisfaction on e-commerce platforms.
 
 ### Research Questions To Be Addressed
-- How can we gather drug data using Crawlab and the script given?
-- How can associations be made between MPNs and product details/names?
-- How can price comparisons be done efficiently with such large amounts of data? 
+- Can we predict the CSAT Score based on customer service interaction details and order attributes?
+- What are the major factors influencing customer satisfaction in e-commerce websites?
 
 ## Phase 1: 
-The project also entails converting the current script to use Crawlab and use a SQL database for improved scalability and data management.
+ Data Preparation and Analysis
 ### Tasks:
-Adapt two web crawling scripts tailored to navigate and extract data from targeted websites.
-Ensure the script can handle various website structures and data formats.
-Integrate the scripts with a SQL database to store the fetched data, including photographs of the drugs, their descriptions, and MPNs. The design should account for data normalization to ensure that each drug's information is stored in an organized and accessible manner.
+Data Cleaning: Process the dataset to handle missing values, remove duplicates, and correct inconsistencies.
+Feature Engineering: Develop new features that could be significant predictors of CSAT Scores, such as the time taken to respond to customer issues and sentiment scores derived from customer remarks.
+Exploratory Data Analysis (EDA): Conduct an initial analysis to understand the distributions, correlations, and patterns in the data, focusing on how different variables might affect the CSAT Scores.
 
-## Phase 2: Create a script for medline
+## Phase 2: Model Development and Evaluation
 ### Tasks:
-Collect and preprocess a dataset of drug names, specifications, and MPNs to train the machine learning model. This involves cleaning the data, handling missing values, and possibly augmenting data to improve model performance.
-Choose and train a suitable machine learning model that can accurately predict or identify the MPN based on drug names and specifications. 
-Integrate the machine learning model into the application, ensuring it can operate in real-time or batch mode to enrich the database with MPN information where it is missing.
-
-Fetching items via crawling then being able to compare their prices in an accurate manner. Take photo of item , description put it in mysql db. Keep the MPN for each item  
+Model Selection: Focus on simple yet effective machine learning models that have been covered in class. This includes Linear Regression for a baseline model and Random Forest for capturing more complex relationships.
+Training and Validation: Implement cross-validation to assess the models' performance, ensuring they generalize well to unseen data.
+Evaluation: Use metrics such as RMSE (Root Mean Square Error), MAE (Mean Absolute Error), and R-squared for regression models to evaluate and compare model performance.
 
 ### Class of models to be applied to dataset
-- Natural Language Processing (NLP) Models
-    - to link drug names to MPN
-- Assocation Rule Mining
-    - to link drug details and names to MPN
-- Image Recognition Models (Might not be useful for our situation)
+Supervised Learning Models:
+- Linear Regression: To understand linear relationships between the features and CSAT Scores.
+- Random Forest: To capture non-linear relationships and interactions between variables.
 
 ### Algorithms
-- NLP : Reccurent Neural Networks (RNNs)
-- Image Recognition Models : Convolutional Neural Networks (CNNs)
+- Linear Regression: A fundamental approach for predicting a continuous outcome variable based on one or more predictor variables.
+- Random Forest: An ensemble learning method for classification and regression that operates by constructing multiple decision trees during training time and outputting the mean/average prediction of the individual trees.
 
 
 ### Conclusion
-Our team is dedicated to creating a reliable system for MPN identification and medication pricing comparison by incorporating these algorithms into our workflow. This approach will enhance the standardisation and dependability of medicine identification across various vendors in addition to making pricing comparisons more efficient. Our strategy is intended to satisfy the pharmaceutical industry's urgent need for precise, easily available, and thorough medication information.
+Our team is committed to uncovering the key factors that influence customer satisfaction on e-commerce websites. By applying machine learning algorithms to customer service data, we aim to predict CSAT Scores and provide recommendations to improve customer service quality. This project not only seeks to enhance the customer experience but also offers valuable insights for e-commerce platforms to optimize their customer service strategies.
 
 
