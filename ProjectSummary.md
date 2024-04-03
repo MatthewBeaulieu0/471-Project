@@ -21,13 +21,14 @@ Evaluation: Use metrics such as RMSE (Root Mean Square Error), MAE (Mean Absolut
 
 ### Class of models to be applied to dataset
 Supervised Learning Models:
-- Linear Regression: To understand linear relationships between the features and CSAT Scores.
+- Linear Regression: To understand linear relationships between the features and CSAT Scores. (OMITTED)
 - Random Forest: To capture non-linear relationships and interactions between variables.
+- MLP Classification: To capture non-linear relationships and interactions between variables.
 
 ### Algorithms
-- Linear Regression: A fundamental approach for predicting a continuous outcome variable based on one or more predictor variables.
+- Linear Regression: A fundamental approach for predicting a continuous outcome variable based on one or more predictor variables. (OMITTED)
 - Random Forest: An ensemble learning method for classification and regression that operates by constructing multiple decision trees during training time and outputting the mean/average prediction of the individual trees.
-
+- MLP: A neural network model used for classification and regression consisting of multiple layers of interconnected nodes, employing nonlinear activation functions, and undergoing iterative weight adjustments for optimization.
 
 ### Conclusion
 Our team is committed to uncovering the key factors that influence customer satisfaction on e-commerce websites. By applying machine learning algorithms to customer service data, we aim to predict CSAT Scores and provide recommendations to improve customer service quality. This project not only seeks to enhance the customer experience but also offers valuable insights for e-commerce platforms to optimize their customer service strategies.
